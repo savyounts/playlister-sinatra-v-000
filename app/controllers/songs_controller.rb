@@ -14,6 +14,7 @@ class SongsController < ApplicationController
     # binding.pry
     @song = Song.new(name: params[:name])
     @song.artist = Artist.find_or_create_by(name: params[artist_name])
+    @song.genres = params[:genres]
     @songs = Song.all
     erb :'songs/index'
   end
