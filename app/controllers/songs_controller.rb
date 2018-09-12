@@ -31,7 +31,7 @@ class SongsController < ApplicationController
 
   patch '/songs/:slug' do
     @song = Song.find_by_slug(params[:slug])
-    @song.update(params)
+    @song.update(name: params[:name], artist: params[:artist_name], genres: params[:genres])
     @song.save
 
     flash[:message] = "Successfully updated song."
