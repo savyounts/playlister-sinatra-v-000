@@ -10,6 +10,6 @@ class Genre < ActiveRecord::Base
   end
 
   def self.find_by_slug(slug)
-   Song.all.find{|song| song.slug == slug}
+   Genre.all.find{|song| song.slug == slug}
  end
 end
