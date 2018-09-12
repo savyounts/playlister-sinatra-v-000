@@ -9,8 +9,7 @@ class Song < ActiveRecord::Base
     self.name.gsub(" ", "-").downcase
   end
 
-  def self.find_by_slug(slug)
-    song_name = slug.split("-").map(&:capitalize).join(' ')
-    song = self.find_by(name: song_name)
+  def find_by_slug(slug)     
+    self.all.find{ |instance| instance.slug == slug }   
   end
 end
