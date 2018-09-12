@@ -10,4 +10,3 @@
 #       instance = self.class.find_by(name: slug)
 #     end
 #   end
-
