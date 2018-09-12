@@ -12,8 +12,8 @@ class SongsController < ApplicationController
 
   post '/songs' do
     # binding.pry
-    artist = Artist.create(name: params[:song][:artist])
-    @song = Song.create(name: params[:song][:name], artist: artist)
+    artist = Artist.create(name: params[:artist_name])
+    @song = Song.create(name: params[:name], artist: artist)
     @songs = Song.all
     erb :'songs/index'
   end
