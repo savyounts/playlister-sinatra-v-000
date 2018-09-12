@@ -1,1 +1,12 @@
-form for new artists
+<h1>Add an Artist</h1>
+
+<form action="/artists" method="post">
+  <input type="text" name="artist[name]" placeholder="Artist Name"><br>
+  <% @songs.each do |s| %>
+  <input type="checkbox" name="artist[songs][]" value="<%= s.name %>"><%= s.name %></input>
+  <% end %><br>
+  <% @genres.each do |g| %>
+  <input type="checkbox" name="song[genres][]" value="<%= g.name %>"><%= g.name %></input>
+  <% end %><br>
+  <input type="submit" value="Create Song">
+</form>
